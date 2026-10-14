@@ -1,0 +1,17 @@
+VISION X — PROFESSIONAL UI
+
+
+
+py -3.11 -m venv .venv
+.\.venv\Scripts\Activate.ps1
+python -m pip install --upgrade pip
+python -m pip install -r requirements.txt
+python -m streamlit run app.py
+
+Important:
+- Use Python 3.11 for MediaPipe compatibility.
+- For YOLO Object Detection, install the optional package:
+  python -m pip install ultralytics
+- If PowerShell blocks activation, run:
+  Set-ExecutionPolicy -Scope Process -ExecutionPolicy Bypass
+  then activate the venv again.
