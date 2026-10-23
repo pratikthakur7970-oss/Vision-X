@@ -21,6 +21,7 @@ from datetime import datetime
 st.set_page_config(
     page_title="Vision X | AI Computer Vision Studio",
     page_icon="🧠",
+    
     layout="wide",
     initial_sidebar_state="expanded",
 )
@@ -425,11 +426,11 @@ with st.sidebar:
 
 
 
-    st.markdown('<span class="status-pill">● Local processing</span>', unsafe_allow_html=True)
+    st.markdown('<span class="status-pill">● Vision processing</span>', unsafe_allow_html=True)
 
 
 
-    st.markdown('<p class="small-muted">Camera frames and uploaded files are processed on this computer.</p>', unsafe_allow_html=True)
+    st.markdown('<p class="small-muted">Camera frames are processed through your browser session; uploaded files are processed by Vision X.</p>', unsafe_allow_html=True)
 
 
 
@@ -713,7 +714,7 @@ elif current == "Live Vision Lab":
 
             if module == "Virtual Mouse":
 
-                st.info("Virtual Mouse controls your actual cursor when running locally in VS Code. A hosted browser session can track hands but cannot control your laptop cursor.")
+                st.info("On a hosted website, hand tracking works in the browser, but browser security prevents the server from moving your laptop's real OS cursor. Real cursor control is supported only when running locally.")
 
                 # Preserve the original local Virtual Mouse implementation.
 
@@ -790,6 +791,7 @@ elif current == "Live Vision Lab":
                     )
 
                     status.info("Allow browser camera access and click START in the camera panel. Frames are processed by Vision X.")
+                    st.caption("If the camera reports `navigator.mediaDevices is undefined`, open the deployed site directly using its HTTPS URL (not an HTTP link or an embedded preview), then allow Camera access in your browser settings.")
 
                 except Exception as exc:
 
