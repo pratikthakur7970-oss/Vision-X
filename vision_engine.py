@@ -1134,7 +1134,8 @@ class BrowserVisionProcessor(VideoProcessorBase):
         self.mirror = mirror
         self.show_fps = show_fps
         self.engine = VisionEngine(module, camera_index=0, mirror=mirror, show_fps=show_fps)
-        # A hosted process cannot control the visitor's local mouse.
+        # Browser-hosted Python runs on the server, not on the visitor's computer.
+        # Therefore pyautogui must remain disabled for hosted sessions.
         if module == "Virtual Mouse":
             self.engine._pyautogui = None
 
